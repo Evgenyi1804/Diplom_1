@@ -3,12 +3,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import java.util.Random;
-import org.apache.commons.lang3.RandomStringUtils;
+import  static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class IngredientTest {
-    private final static RandomStringUtils randomStringUtils = new RandomStringUtils();
     private final static Random random = new Random();
     private Ingredient ingredient;
     private final IngredientType ingredientType;
@@ -24,8 +23,8 @@ public class IngredientTest {
     @Parameterized.Parameters
     public static Object[][] Ingredient() {
         return new Object[][]{
-                {IngredientType.FILLING, randomStringUtils.randomAlphabetic(10), random.nextFloat()},
-                {IngredientType.SAUCE, randomStringUtils.randomAlphabetic(10), random.nextFloat()}
+                {IngredientType.FILLING, randomAlphabetic(10), random.nextFloat()},
+                {IngredientType.SAUCE, randomAlphabetic(10), random.nextFloat()}
         };
     }
 
